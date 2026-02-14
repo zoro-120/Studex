@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0d1117, #1a1a1a);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.container {
+  background: #121212;
+  padding: 45px 35px;
+  border-radius: 20px;
+  width: 380px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 255, 213, 0.15);
+}
+
+/* Logo */
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 42px;
+  color: #00ffd5;
+  text-shadow: 0 0 6px #00ffd5;
+  margin-bottom: 10px;
+}
+
+/* Title */
+.title {
+  font-size: 18px;
+  color: #b0b0b0;
+  margin-bottom: 30px;
+}
+
+/* Cards */
+.card {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #2a2a2a;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Buyer Card Glow */
+.buyer:hover {
+  box-shadow: 0 0 15px #00ffd5;
+  border-color: #00ffd5;
+}
+
+/* Seller Card Glow */
+.seller:hover {
+  box-shadow: 0 0 15px #ff00ff;
+  border-color: #ff00ff;
+}
+
+/* Icon */
+.icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* Card Text */
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.card p {
+  font-size: 14px;
+  color: #aaa;
+}

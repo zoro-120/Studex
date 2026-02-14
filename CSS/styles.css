@@ -1,0 +1,110 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body Dark Gradient */
+body {
+  background: radial-gradient(circle at top, #0d1117, #1a1a1a);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container Card */
+.container {
+  text-align: center;
+  padding: 50px 35px;
+  border-radius: 25px;
+  background: #121212;
+  
+  max-width: 400px;
+  width: 90%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 255, 213, 0.25);
+}
+
+/* Logo Neon Glow */
+.logo {
+  font-size: 55px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  color: #00ffd5;
+ 
+  margin-bottom: 40px;
+}
+
+/* Buttons Common */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  margin: 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 1px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Sign Up Button Neon Gradient */
+.btn-signup {
+  background: linear-gradient(135deg, #00ffd5, #00bfa5);
+  color: #121212;
+  box-shadow: 0 0 8px #00ffd500, 0 0 16px #00ffd5;
+}
+
+.btn-signup:hover {
+  transform: scale(1.03);
+  
+}
+
+/* Log In Button Neon Gradient */
+.btn-login {
+  background: linear-gradient(135deg, #ff00ff, #c700ff);
+  color: #ffffff;
+  box-shadow: 0 0 8px #ff00ff00, 0 0 16px #ff00ff;
+}
+
+.btn-login:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 12px #ff00ff, 0 0 24px #ff00ff;
+}
+
+/* Footer */
+.footer {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #b0b0b0;
+  letter-spacing: 0.5px;
+}
+.otp-btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ff00ff, #c700ff);
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.otp-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px #ff00ff;
+}
