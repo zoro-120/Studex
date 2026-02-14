@@ -52,6 +52,8 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 ![Screenshot 1](screen1.png)
+![Screenshot 2](screen2.png)
+![Screenshot 3](screen3.png)
 ![screerecord](https://drive.google.com/file/d/10xA-k0katmOLU-8LL3eqh7f8XevpiQCd/view?usp=sharing)
 *the website*
 
