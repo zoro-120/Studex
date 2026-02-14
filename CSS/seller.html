@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StuDeX - Seller</title>
+  <link rel="stylesheet" href="seller.css">
+</head>
+<body>
+
+<h1>StuDeX </h1>
+
+<div class="form-box">
+  <h2>Add Book</h2>
+  <div class="input-group">
+  
+
+  <select id="year">
+    <option value="">Year</option>
+    <option>1st Year</option>
+    <option>2nd Year</option>
+    <option>3rd Year</option>
+    <option>4th Year</option>
+  </select>
+
+  <select id="sem">
+    <option value="">Semester</option>
+    <option>1</option><option>2</option>
+    <option>3</option><option>4</option>
+    <option>5</option><option>6</option>
+    <option>7</option><option>8</option>
+  </select>
+   <input id="department" placeholder="Department">
+  
+  <select id="subject">
+    <option value="">Subject</option>
+    <option>AEC E</option><option>AEC L</option>
+    <option>MAJOR</option><option>MINOR B</option>
+    <option>MINOR C</option><option>MDC</option>
+    
+  </select>
+  <input id="price" type="number" placeholder="Price">
+
+  <label>Upload 3 Images (Required)</label>
+  <input type="file" id="images" accept="image/*" multiple>
+
+  <label>Upload 1 Video (Required)</label>
+  <input type="file" id="video" accept="video/*">
+  </div>
+
+<button id="uploadBtn">Upload</button>
+
+</div>
+
+<div class="seller-books">
+  <h2>Your Listings</h2>
+  <div id="sellerList"></div>
+</div>
+<script src="seller.js"></script>
+
+
+
+
+</body>
+</html>

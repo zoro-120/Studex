@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StuDeX Chat</title>
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+
+<div class="chat-container">
+
+  <div class="chat-header">
+    <div class="header-left">
+      <div class="status-dot"></div>
+      <span class="seller-name">BOSS</span>
+    </div>
+  </div>
+
+  <div class="chat-messages" id="chatMessages"></div>
+
+  <div class="typing-indicator" id="typingIndicator">
+    Seller is typing<span class="dots"></span>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="messageInput" placeholder="Type your message...">
+    <button id="sendBtn">➤</button>
+  </div>
+
+</div>
+
+<script src="chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>StuDeX - Buyer</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="CSS/buyer.css">
+</head>
+<body>
+
+<h1>Find Your Book</h1>
+
+<!-- Top Buttons -->
+<div class="top-buttons">
+  <!-- Back button -->
+  <a href="pathway.html" class="icon-btn">
+    <i class="fa-solid fa-arrow-left"></i>
+  </a>
+
+  <!-- Chat button -->
+  <a href="chat.html" class="icon-btn">
+    <i class="fa-solid fa-comment"></i>
+  </a>
+</div>
+<div class="selection-box">
+<!-- Selection Box -->
+
+  <select id="yearSelect" onchange="loadSemesters()">
+    <option value="">Select Year</option>
+    <option>1st Year</option>
+    <option>2nd Year</option>
+    <option>3rd Year</option>
+    <option>4th Year</option>
+  </select>
+
+  <select id="semSelect" onchange="loadSubjects()">
+    <option value="">Select Semester</option>
+
+    <option>1</option><option>2</option>
+    <option>3</option><option>4</option>
+    <option>5</option><option>6</option>
+    <option>7</option><option>8</option>
+  
+  </select>
+
+  <select id="subjectSelect" onchange="showBooks()">
+    <option value="">Select Subject</option>
+     <option>AEC E</option><option>AEC L</option>
+    <option>MAJOR</option><option>MINOR B</option>
+    <option>MINOR C</option><option>MDC</option>
+  </select>
+</div>
+
+<!-- Book List -->
+<div id="bookList"></div>
+
+<script>
+let books = JSON.parse(localStorage.getItem("books")) || [];
+
+// Load semesters based on year
+function loadSemesters(){
+  let year = document.getElementById("yearSelect").value;
+  let semSelect = document.getElementById("semSelect");
+
+  semSelect.innerHTML = "<option value=''>Select Semester</option>";
+
+  if(year){
+    semSelect.disabled = false;
+    for(let i=1; i<=8; i++){
+      semSelect.innerHTML += `<option>${i}</option>`;
+    }
+  } else {
+    semSelect.disabled = true;
+  }
+}
+
+// Load subjects based on year & semester
+function loadSubjects(){
+  let year = document.getElementById("yearSelect").value;
+  let sem = document.getElementById("semSelect").value;
+  let subjectSelect = document.getElementById("subjectSelect");
+
+  // subjectSelect.innerHTML = "<option value=''>Select Subject</option>";
+
+  // if(sem){
+  //   subjectSelect.disabled = false;
+
+  //   let filtered = books.filter(b => b.year === year && b.sem === sem);
+  //   let uniqueSubjects = [...new Set(filtered.map(b => b.subject))];
+
+  //   uniqueSubjects.forEach(sub => {
+  //     subjectSelect.innerHTML += `<option>${sub}</option>`;
+  //   });
+  // } else {
+  //   subjectSelect.disabled = true;
+  // }
+}
+
+// Show books in container
+function showBooks(){
+  let year = document.getElementById("yearSelect").value;
+  let sem = document.getElementById("semSelect").value;
+  let subject = document.getElementById("subjectSelect").value;
+  let container = document.getElementById("bookList");
+
+  container.innerHTML = "";
+
+  let filtered = books.filter(b =>
+    b.year === year && b.sem === sem && b.subject === subject
+  );
+
+  if(filtered.length === 0){
+    container.innerHTML = "<p>No books available.</p>";
+    return;
+  }
+
+  filtered.forEach(book => {
+    let stockUI = "";
+    if(book.stock > 0){
+      stockUI = `
+        <p class="available">In Stock (${book.stock})</p>
+        <a href="chat.html?book=${book.key}">
+          <button class="buy-btn">Chat & Buy</button>
+        </a>
+      `;
+    } else {
+      stockUI = `
+        <p class="sold">Sold Out</p>
+        <button class="notify-btn" onclick="notifyMe()">Notify Me</button>
+      `;
+    }
+
+    container.innerHTML += `
+      <div class="card">
+        <h3>${book.title}</h3>
+        ${stockUI}
+      </div>
+    `;
+  });
+}
+
+// Notify me
+function notifyMe(){
+  alert("You will be notified when available.");
+}
+</script>
+
+</body>
+</html>
